@@ -10,7 +10,7 @@ router.get(`/`, async (req, res) => {
   res.send(userList);
 });
 
-router.get('/', async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     let user = new User({
       name: req.body.name,
