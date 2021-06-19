@@ -52,7 +52,7 @@ mongoose
 
 //Production
 const port = process.env.PORT || 3000;
-var server = app.listen(port, function () {
+app.listen(port, function () {
   // var port = server.address().port;
   console.log('Express is working on port ' + port);
 });
