@@ -51,7 +51,7 @@ mongoose
 // });
 
 //Production
-const server = app.listen(process.env.PORT || 3000, () => {
-  const port = server.address().port;
+var server = app.listen(process.env.PORT || 3000, function () {
+  var port = server.address().port;
   console.log('Express is working on port ' + port);
 });
