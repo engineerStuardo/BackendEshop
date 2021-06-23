@@ -12,7 +12,7 @@ router.get(`/`, async (req, res) => {
   res.send(userList);
 });
 
-router.get('/:id', async (req, res) => {
+router.get('/id/:id', async (req, res) => {
   const user = await User.findById(req.params.id).select('-passwordHash');
   if (!user) {
     res
