@@ -7,6 +7,7 @@ const cors = require('cors');
 require('dotenv/config');
 const authJwt = require('./helpers/jwt');
 const errorHandler = require('./helpers/error-handler');
+var path = require('path');
 
 app.use(cors());
 app.options('*', cors());
@@ -16,7 +17,10 @@ app.use(bodyParser.json());
 app.use(morgan('tiny'));
 app.use(authJwt());
 console.log('dirname ' + __dirname);
-app.use('/public/uploads', express.static(__dirname + '/public/uploads'));
+app.use(
+  '/public/uploads',
+  express.static(path.join(__dirname + '/public/uploads'))
+);
 app.use(errorHandler);
 
 //Routes
