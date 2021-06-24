@@ -15,7 +15,7 @@ app.options('*', cors());
 app.use(bodyParser.json());
 app.use(morgan('tiny'));
 app.use(authJwt());
-console.log(__dirname);
+console.log('dirname ' + __dirname);
 app.use('/public/uploads', express.static(__dirname + '/public/uploads'));
 app.use(errorHandler);
 
